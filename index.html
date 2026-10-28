@@ -162,21 +162,27 @@ section { display: flex; flex-direction: column; gap: 32px; }
 .tl h4 { font-size: 1.05rem; font-weight: 600; }
 .tl p { font-size: 0.98rem; color: var(--muted); }
 
-/* Contact */
-.contact { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 32px; display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)); gap: 28px 32px; align-items: start; }
-.contact h2 { font-size: 1.8rem; font-weight: 700; letter-spacing: -0.02em; }
-.contact > div { min-width: 0; display: flex; flex-direction: column; gap: 6px; }
-.contact address { font-style: normal; font-size: 1rem; }
-.placeholder { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); border: 1px dashed var(--rule); border-radius: 6px; padding: 8px 10px; align-self: flex-start; }
+/* Contact: full-width black band that runs into the footer */
+.contact-band { background: var(--hero); color: var(--hero-ink); border-top: 1px solid rgba(238, 242, 245, 0.08); }
+.contact-band .wrap { padding-block: 72px 56px; }
+.contact { display: grid; grid-template-columns: minmax(0, 1.2fr) repeat(3, minmax(0, 1fr)); gap: 32px 40px; align-items: start; }
+.contact h2 { font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; color: var(--hero-ink); }
+.contact > div { min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.contact .eyebrow { color: var(--hero-muted); }
+.contact address { font-style: normal; font-size: 1rem; color: var(--hero-ink); }
+.contact a { color: var(--hero-ink); font-size: 1rem; text-decoration-color: var(--glow-b); overflow-wrap: anywhere; }
+.contact a:hover { color: var(--glow-b); }
 
-footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.76rem; color: var(--muted); }
+footer { background: var(--hero); }
+footer .wrap { padding-block: 20px 40px; border-top: 1px solid rgba(238, 242, 245, 0.12); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.76rem; color: var(--hero-muted); }
 
 @media (max-width: 900px) {
   .arc { grid-template-columns: minmax(0, 1fr); }
   .arc::before { top: 32px; bottom: 32px; left: 31px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--green), var(--accent) 60%, var(--rule)); }
   .trio { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .training { grid-template-columns: minmax(0, 1fr); }
-  .contact { grid-template-columns: minmax(0, 1fr); padding: 24px; }
+  .contact { grid-template-columns: minmax(0, 1fr); gap: 28px; }
+  .contact-band .wrap { padding-block: 56px 40px; }
   .hero::after { background: linear-gradient(180deg, var(--fade) 0%, var(--fade) 55%, rgba(6, 11, 16, 0.6) 100%); }
   .hero .wrap { grid-template-columns: minmax(0, 1fr); }
   .portrait { order: -1; width: 132px; box-shadow: 0 0 0 3px rgba(238, 242, 245, 0.92), 0 0 0 8px rgba(242, 72, 159, 0.28), 0 0 40px rgba(63, 224, 154, 0.25); }
@@ -321,28 +327,31 @@ footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-betw
       </div>
     </section>
 
-    <section id="contact" aria-labelledby="contact-h">
-      <div class="contact">
-        <h2 id="contact-h">Get in touch</h2>
-        <div>
-          <p class="eyebrow">Mailing address</p>
-          <address>Jan and Dan Duncan Neurological Research Institute<br>1250 Moursund Street, Suite 925<br>Houston, TX 77030</address>
-        </div>
-        <div>
-          <p class="eyebrow">Email</p>
-          <a href="mailto:abdalla.alia@bcm.edu">abdalla.alia@bcm.edu</a>
-          <a href="mailto:abdalla.galaa02@gmail.com">abdalla.galaa02@gmail.com</a>
-        </div>
-        <div>
-          <p class="eyebrow">Profiles</p>
-          <a href="https://www.bcm.edu/people-search/abdalla-alia-204941">Baylor College of Medicine profile</a>
-          <a href="https://scholar.google.com/citations?user=uYKn8aUAAAAJ&amp;hl=en">Google Scholar</a>
-          <a href="https://www.linkedin.com/in/abdalla-alia/">LinkedIn</a>
-        </div>
-      </div>
-    </section>
   </div>
 </main>
+
+<section id="contact" class="contact-band" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="contact">
+      <h2 id="contact-h">Get in touch</h2>
+      <div>
+        <p class="eyebrow">Mailing address</p>
+        <address>Jan and Dan Duncan Neurological Research Institute<br>1250 Moursund Street, Suite 925<br>Houston, TX 77030</address>
+      </div>
+      <div>
+        <p class="eyebrow">Email</p>
+        <a href="mailto:abdalla.alia@bcm.edu">abdalla.alia@bcm.edu</a>
+        <a href="mailto:abdalla.galaa02@gmail.com">abdalla.galaa02@gmail.com</a>
+      </div>
+      <div>
+        <p class="eyebrow">Profiles</p>
+        <a href="https://www.bcm.edu/people-search/abdalla-alia-204941">Baylor College of Medicine profile</a>
+        <a href="https://scholar.google.com/citations?user=uYKn8aUAAAAJ&amp;hl=en">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/abdalla-alia/">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
 
 <footer>
   <div class="wrap">
