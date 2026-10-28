@@ -138,24 +138,9 @@ section { display: flex; flex-direction: column; gap: 32px; }
 .stage .out { margin-top: auto; padding-top: 8px; font-family: var(--mono); font-size: 0.76rem; color: var(--muted); letter-spacing: 0.02em; }
 .stage .out b { color: var(--accent); font-weight: 500; }
 
-/* Featured paper */
-.feature { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 32px 48px; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 32px; }
-.feature h3 { font-size: clamp(1.35rem, 2.4vw, 1.75rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-top: 10px; }
-.feature .right { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
-.feature .finding { font-size: 1.15rem; }
-.feature .authors { font-size: 0.95rem; color: var(--muted); }
-.feature .authors b { color: var(--ink); font-weight: 500; }
-.links { display: flex; gap: 18px; flex-wrap: wrap; font-family: var(--mono); font-size: 0.8rem; }
-.tag { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 999px; align-self: flex-start; }
-
-/* Publication list */
-.pubs { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
-.pubs li { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 20px; padding-block: 20px; border-bottom: 1px solid var(--rule); }
-.yr { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); font-variant-numeric: tabular-nums; padding-top: 3px; }
-.pubs h4 { font-size: 1.06rem; font-weight: 600; line-height: 1.3; letter-spacing: -0.005em; }
-.pubs .meta { font-size: 0.95rem; color: var(--muted); margin-top: 4px; }
-.pubs .meta b { color: var(--ink); font-weight: 500; }
-.pubs .links { margin-top: 8px; }
+.see-all { font-family: var(--display); font-weight: 600; font-size: 0.98rem; }
+.see-all a { text-decoration: none; }
+.see-all a:hover { text-decoration: underline; }
 
 /* Three-up info */
 .trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; }
@@ -189,7 +174,6 @@ footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-betw
 @media (max-width: 900px) {
   .arc { grid-template-columns: minmax(0, 1fr); }
   .arc::before { top: 32px; bottom: 32px; left: 31px; right: auto; width: 2px; height: auto; background: linear-gradient(180deg, var(--green), var(--accent) 60%, var(--rule)); }
-  .feature { grid-template-columns: minmax(0, 1fr); padding: 24px; }
   .trio { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .training { grid-template-columns: minmax(0, 1fr); }
   .contact { grid-template-columns: minmax(0, 1fr); padding: 24px; }
@@ -200,7 +184,6 @@ footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-betw
 @media (max-width: 560px) {
   .hero .wrap { padding-block: 56px 48px; }
   main .wrap { gap: 64px; padding-block: 48px 40px; }
-  .pubs li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
   .bar nav { gap: 2px 14px; font-size: 0.85rem; }
 }
 </style>
@@ -234,7 +217,7 @@ footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-betw
     <a class="bar-name" href="#research">A. G. Alia, Ph.D.</a>
     <nav aria-label="Sections">
       <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
+      <a href="publications.html">Publications</a>
       <a href="#teaching">Teaching</a>
       <a href="#training">Training</a>
       <a href="ideas.html">Ideas</a>
@@ -279,68 +262,7 @@ footer .wrap { padding-block: 0 40px; display: flex; justify-content: space-betw
           <p class="out">Fly ↔ mouse · patient variants</p>
         </li>
       </ol>
-    </section>
-
-    <section id="publications" aria-labelledby="pubs-h">
-      <div class="sec-head">
-        <p class="eyebrow">Publications</p>
-        <h2 id="pubs-h">Selected work</h2>
-      </div>
-
-      <article class="feature">
-        <div>
-          <span class="tag">Featured</span>
-          <h3>Neuropeptide signaling and the blood-brain barrier generate a persistent stress-induced internal state in <i>Drosophila</i></h3>
-        </div>
-        <div class="right">
-          <p class="finding">Brief stress leaves a lasting change in fly behavior. This work identifies neuropeptide signaling acting together with the blood–brain barrier as the system that keeps that state in place.</p>
-          <p class="authors"><b>Alia AG</b>, Hu X, Gu Y, Yau J, Tian G, Semmelhack JL, Saito K, Tanimoto H, Tsuyuzaki K, Naganos S, Miyashita T, Saitoe M, Hirano Y. <i>Proc Natl Acad Sci USA</i> 123(27):e2517987123 (2026).</p>
-          <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/42384693/">PubMed</a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13342866/">Full text</a></p>
-        </div>
-      </article>
-
-      <ol class="pubs">
-        <li>
-          <span class="yr">2024</span>
-          <div>
-            <h4>The fly brain lands in Tokyo: A report on the 3rd Asia Pacific <i>Drosophila</i> Neurobiology Conference</h4>
-            <p class="meta">Das G, Malak OA, Sharma K, <b>Alia AG</b>, Gopalakrishnan S, Menon RV, Yamanouchi HM, Nose A, Kazama H, Moore AW, Suzuki T. <i>Genes Cells</i> 29(12):1111–1117.</p>
-            <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/39500337/">PubMed</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2023</span>
-          <div>
-            <h4>Differential second messenger signaling via dopamine neurons bidirectionally regulates memory retention</h4>
-            <p class="meta">Takakura M, Lam YH, Nakagawa R, Ng MY, Hu X, Bhargava P, <b>Alia AG</b>, Gu Y, Wang Z, Ota T, Kimura Y, Morimoto N, Osakada F, Lee AY, Leung D, Miyashita T, Du J, Okuno H, Hirano Y. <i>Proc Natl Acad Sci USA</i> 120(36):e2304851120.</p>
-            <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/37639608/">PubMed</a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10483633/">Full text</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2021</span>
-          <div>
-            <h4>Rpd3/CoRest-mediated activity-dependent transcription regulates the flexibility in memory updating in <i>Drosophila</i></h4>
-            <p class="meta">Takakura M, Nakagawa R, Ota T, Kimura Y, Ng MY, <b>Alia AG</b>, Okuno H, Hirano Y. <i>Nat Commun</i> 12(1):628.</p>
-            <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/33504795/">PubMed</a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7840730/">Full text</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2021</span>
-          <div>
-            <h4>Sleep/wake calcium dynamics, respiratory function, and ROS production in cardiac mitochondria</h4>
-            <p class="meta">Abdel-Rahman EA, Hosseiny S, <b>Aaliya A</b>, Adel M, Yasseen B, Al-Okda A, Radwan Y, Saber SH, Elkholy N, Elhanafy E, Walker EE, Zuniga-Hertz JP, Patel HH, Griffiths HR, Ali SS. <i>J Adv Res</i> 31:35–47. (Published as Aaliya A.)</p>
-            <p class="links"><a href="https://pubmed.ncbi.nlm.nih.gov/34194831/">PubMed</a><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8240107/">Full text</a></p>
-          </div>
-        </li>
-        <li>
-          <span class="yr">2016</span>
-          <div>
-            <h4>Resolving contributions of oxygen-consuming and ROS-generating enzymes at the synapse</h4>
-            <p class="meta">Abdel-Rahman EA, Mokhtar A, <b>Aaliya A</b>, Radwan Y, Yasseen B, Al-Okda A, Atwa A, Elhanafy E, Habashy M, Ali SS. <i>Oxid Med Cell Longev</i>. (Published as Aaliya A.)</p>
-            <p class="links"><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5149698/">Full text</a></p>
-          </div>
-        </li>
-      </ol>
+      <p class="see-all"><a href="publications.html">See all publications →</a></p>
     </section>
 
     <section id="teaching" aria-labelledby="teach-h">
